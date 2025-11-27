@@ -1,0 +1,26 @@
+.idea/
+.vscode/
+
+..gitignore.un~
+.gitignore~
+
+
+# MPLABX private project settings
+**/nbproject/private
+
+
+# MPLAB build/dist files
+**/build/
+**/dist/
+**/*.o
+**/*.d
+**/*.hex
+**/*.cof
+**/*.map
+**/*.err
+**/*.lst
+
+
+# Pdf files
+**/*.pdf
+
