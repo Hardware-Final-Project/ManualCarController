@@ -5,6 +5,7 @@
 
 
 char ch;
+
 char read_flag = 0;
 
 
@@ -12,12 +13,29 @@ void main(void) {
     
     SYSTEM_Initialize();
     
+    unsigned int duty1 = 400;
+    unsigned int duty2 = 0;
+    
+    CCPR1L = (duty1 >> 2) & 0xff;
+    CCP1CONbits.DC1B = duty1 & 0x03;
+    
+    CCPR2L = (duty2 >> 2) & 0xff;
+    CCP2CONbits.DC2B = duty2 & 0x03;
+    
+    
+    
     while (1) {
         if (read_flag == 1) {
-            LATD = (ch & 0x0f) << 4;
+            sscanf(GetString(), "%u %u", &duty1, &duty2);
             ClearBuffer();
             read_flag = 0;
+            CCPR1L = (duty1 >> 2) & 0xff;
+            CCP1CONbits.DC1B = duty1 & 0x03;
+
+            CCPR2L = (duty2 >> 2) & 0xff;
+            CCP2CONbits.DC2B = duty2 & 0x03;
         }
+        
         
         
     }
@@ -37,9 +55,12 @@ void __interrupt(low_priority) Lo_ISR(void)
             CREN = 1;
         }
         
-        ch = RCREG;
-//        MyusartRead();
-        read_flag = 1;
+//        ch = RCREG;
+        MyusartRead();
+        if (getLenStr() == 7) {
+            read_flag = 1;   
+        }
+        
     }
     
    // process other interrupt sources here, if required

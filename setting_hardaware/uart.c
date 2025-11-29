@@ -6,6 +6,12 @@ int lenStr = 0;
 
 char enterFlag = 0;
 
+
+int getLenStr() {
+    return lenStr;
+}
+
+
 void setEnterFlag(const char flag) {
     enterFlag = flag;
 }

@@ -63,6 +63,8 @@ void SYSTEM_Initialize()
 {
     OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
+    CCP1_Initialize();
+    CCP2_Initialize();
     PIN_MANAGER_Initialize();
     UART_Initialize();
     

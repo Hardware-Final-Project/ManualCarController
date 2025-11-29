@@ -3,6 +3,7 @@
       
 void UART_Initialize();
 char * GetString();
+int getLenStr();
 void UART_Write(unsigned char data);
 void UART_Write_Text(char* text);
 void ClearBuffer();
