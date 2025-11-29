@@ -35,9 +35,6 @@ void main(void) {
             CCPR2L = (duty2 >> 2) & 0xff;
             CCP2CONbits.DC2B = duty2 & 0x03;
         }
-        
-        
-        
     }
     
     return;
@@ -63,6 +60,12 @@ void __interrupt(low_priority) Lo_ISR(void)
         
     }
     
+    if(PIR1bits.TMR1IF == 1) {
+        // for something
+        LATD7 = 0;
+        LATD6 = 0;
+        PIR1bits.TMR1IF = 0;
+    }
    // process other interrupt sources here, if required
     return;
 }

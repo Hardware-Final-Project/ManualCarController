@@ -62,12 +62,12 @@
 void SYSTEM_Initialize()
 {
     OSCILLATOR_Initialize();
-    INTERRUPT_Initialize();
-    CCP1_Initialize();
-    CCP2_Initialize();
+    CCP_Initialize();
     PIN_MANAGER_Initialize();
     UART_Initialize();
-    
+    Timer_Initialize();
+    Gear_Shifting_Initialize();
+    INTERRUPT_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

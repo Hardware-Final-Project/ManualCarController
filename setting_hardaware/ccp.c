@@ -12,3 +12,8 @@ void CCP2_Initialize() {
     LATC1 = 0;
     CCP2CONbits.CCP2M = 0b1100;
 }
+
+void CCP_Initialize() {
+    CCP1_Initialize();
+    CCP2_Initialize();
+}

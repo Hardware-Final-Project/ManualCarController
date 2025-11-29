@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>setting_hardaware</sourceRootElem>
+                <sourceRootElem>../Microprocessor-Homework/lab10.X/setting_hardaware</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
