@@ -8,6 +8,6 @@
 #define _XTAL_FREQ 4000000
 
 void Gear_Shifting_Initialize(){
-    LATD6 = 1;
+    LATD6 = 0;
     LATD7 = 0; 
 }

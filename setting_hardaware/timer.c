@@ -10,19 +10,19 @@
 // T1 for gear shifting timer
 void T1_Initialize() {
     // Timer1 initialization 
-    T1CON.RD16 = 1;
-    T1CON.T1RUN = 1;
-    T1CON.T1CKPS = 11; // prescalar = 8
-    T1CON.T1OSCEN = 0;
-    T1CON.TMR1CS = 0; // internal clock
-    T1CON.TMR1ON = 1;
+    T1CONbits.RD16 = 1;
+    T1CONbits.T1RUN = 1;
+    T1CONbits.T1CKPS = 0b11; // prescalar = 8
+    T1CONbits.T1OSCEN = 0;
+    T1CONbits.TMR1CS = 0; // internal clock
+    T1CONbits.TMR1ON = 1;
     
-    // Fosc/4 = 1MHz
-    // 1MHz / 8 = 125kHz
+    // Fosc/4 = 1 MHz
+    // 1MHz / 8 = 125 kHz
     // for 0.5s => 65200
-    // 3036 -> 65536(BDC)
-    TMR1H = 0x0B;
-    TMR1L = 0xDC;
+    // 65536 - 62500 = 3036 = 0x0bdc
+    TMR1H = 0x0b;
+    TMR1L = 0xdc;
     
     PIR1bits.TMR1IF = 0;
     IPR1bits.TMR1IP = 0; // low priority
