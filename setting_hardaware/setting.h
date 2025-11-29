@@ -6,7 +6,7 @@
 //#include "tmr2.h"
 //#include "tmr1.h"
 #include "uart.h"
-#include "ccp1.h"
+#include "ccp.h"
 #include "adc.h"
 #include "interrupt_manager.h"
 #include "pin_manager.h"
