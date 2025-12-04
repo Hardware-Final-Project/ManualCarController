@@ -37,9 +37,9 @@ void UART_Initialize(const char fileno) {
     
     //  Setting baud rate 9600
     TXSTAbits.SYNC = 0;           
-    BAUDCONbits.BRG16 = 0;          
+    BAUDCONbits.BRG16 = 1;          
     TXSTAbits.BRGH = 1;
-    SPBRG = 25;      
+    SPBRG = 16;      
     
    //   Serial enable
     RCSTAbits.SPEN = 1;              
@@ -50,7 +50,7 @@ void UART_Initialize(const char fileno) {
     PIE1bits.TXIE = 0;       
     IPR1bits.TXIP = 0;             
     PIE1bits.RCIE = 1;    
-    IPR1bits.RCIP = 0;           
+    IPR1bits.RCIP = 1;           
 }
 
 void UART_Write(unsigned char data)  // Output on Terminal
@@ -69,6 +69,7 @@ void ClearBuffer(){
     for(int i = 0; i < 10 ; i++)
         mystring[i] = '\0';
     lenStr = 0;
+    setEnterFlag(0);
 }
 
 void MyusartRead()
@@ -76,17 +77,15 @@ void MyusartRead()
     /* TODObasic: try to use UART_Write to finish this function */
     char data = RCREG;
     
-    mystring[lenStr++] = data;
+//    mystring[lenStr++] = data;
     
-//    if (data == '\r') {
-//        enterFlag = 1;
-//        mystring[lenStr] = '\0';
-////        UART_Write('\r');
-////        UART_Write('\n');
-//    } else {
-//        mystring[lenStr++] = data;
-////        UART_Write(data);
-//    }
+    if (data == '\r' || data == '\n' || data == '@') {
+        enterFlag = 1;
+        mystring[lenStr] = '\0';
+    } else {
+        mystring[lenStr++] = data;
+        UART_Write(data);
+    }
     
     
     

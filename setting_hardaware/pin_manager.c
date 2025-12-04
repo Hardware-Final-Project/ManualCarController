@@ -13,4 +13,5 @@ void PIN_MANAGER_Initialize() {
 
     TRISD = 0x0f;
     LATD = 0;
+    // LATD6: B-1A, LATD7: B-1B
 }

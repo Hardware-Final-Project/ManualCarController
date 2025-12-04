@@ -12,17 +12,17 @@ void T1_Initialize() {
     // Timer1 initialization 
     T1CONbits.RD16 = 1;
     T1CONbits.T1RUN = 1;
-    T1CONbits.T1CKPS = 0b11; // prescalar = 8
+    T1CONbits.T1CKPS = 0b01; // prescalar = 2
     T1CONbits.T1OSCEN = 0;
     T1CONbits.TMR1CS = 0; // internal clock
-    T1CONbits.TMR1ON = 1;
+    T1CONbits.TMR1ON = 0;
     
     // Fosc/4 = 1 MHz
     // 1MHz / 8 = 125 kHz
     // for 0.5s => 65200
     // 65536 - 62500 = 3036 = 0x0bdc
-    TMR1H = 0x0b;
-    TMR1L = 0xdc;
+    TMR1H = 0x3c;
+    TMR1L = 0xb0;
     
     PIR1bits.TMR1IF = 0;
     IPR1bits.TMR1IP = 0; // low priority
