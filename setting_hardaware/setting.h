@@ -9,6 +9,8 @@
 #include "pin_manager.h"
 #include "timer.h"
 #include "gear_shifting.h"
+#include "I2C.h"
+#include "SSD1306.h"
 
 void SYSTEM_Initialize();
 void OSCILLATOR_Initialize(void);

@@ -127,7 +127,7 @@ void main(void) {
     CCP2CONbits.DC2B = duty2 & 0x03;
     
     
-    
+    SSD1306_PutString("Manual Car Controller");
     while (1) {
         executeCommand();
         if(getEnterFlag() == 1) ClearBuffer();

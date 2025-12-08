@@ -68,6 +68,11 @@ void SYSTEM_Initialize()
     Timer_Initialize();
     Gear_Shifting_Initialize();
     INTERRUPT_Initialize();
+    
+    I2C_Init();       // ??? I2C
+    SSD1306_Init();   // ??? OLED
+    SSD1306_Clear();  // ????
+    SSD1306_SetCursor(0, 0); 
 }
 
 void OSCILLATOR_Initialize(void)
