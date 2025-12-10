@@ -41,6 +41,7 @@ void thruttle() {
 
 
 void gearShifting() {
+    char oled_buffer[10];
     switch (prev_gear_mode) {
         case 1:
             switch (gear_mode) {
@@ -149,10 +150,13 @@ void executeCommand() {
     
     mode = GetString()[0];
     ClearBuffer();
-
+    char oled_buffer[10];
     switch(mode) {
         case 'A'...'C':
             gear_mode = mode - 'A' + 1;
+            SSD1306_SetCursor(1, 0);
+            sprintf(oled_buffer, "Gear: %c", gear_mode);
+            SSD1306_PutString(oled_buffer);
             gearShifting();
             break;
         // 0 ~ 500, -500 ~ 0
@@ -162,14 +166,22 @@ void executeCommand() {
             if(mode >= 'a' && mode <= 'k') {
                 duty1 = (mode - 'a') * 50;
                 duty2 = 0;
+                sprintf(oled_buffer, "Speed: %c", duty1);
             } else if(mode >= 'l' && mode <= 'v') {
                 duty1 = 0;
-                duty2 = (mode - 'l') * 50;
+                duty2 = (mode - 'l') * 50;                
+                sprintf(oled_buffer, "Speed: -%c", duty2);
             }
+            SSD1306_SetCursor(2, 0);
+            SSD1306_PutString(oled_buffer);
             thruttle();
             break;
         case 'R':
+            SSD1306_SetCursor(3,0);
+            SSD1306_PutString("Reset Gear mode");
             resetGear();
+            SSD1306_SetCursor(3,0);
+            SSD1306_PutString("               ");
             break;
     }
     

@@ -12,11 +12,9 @@ void SSD1306_Write(unsigned char mode, unsigned char byte) {
 
 void SSD1306_Init(void) {
     __delay_ms(100); // ??????
-    OSCCONbits.IRCF = 0b110;
-    // ???????
     SSD1306_Write(CMD_MODE, 0xAE); // Display OFF
     SSD1306_Write(CMD_MODE, 0x20); // Set Memory Addressing Mode
-    SSD1306_Write(CMD_MODE, 0x00); // 00b, Horizontal Addressing Mode
+    SSD1306_Write(CMD_MODE, 0x02); // 0x02, Page Addressing Mode 
     SSD1306_Write(CMD_MODE, 0xB0); // Set Page Start Address for Page Addressing Mode,0-7
     SSD1306_Write(CMD_MODE, 0xC8); // Set COM Output Scan Direction
     SSD1306_Write(CMD_MODE, 0x00); // Set low column address
