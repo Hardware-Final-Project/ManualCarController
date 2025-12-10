@@ -1,6 +1,11 @@
 #ifndef _SSD1306_H
 #define _SSD1306_H
 
+
+#include <xc.h>
+
+
+#define _XTAL_FREQ 4000000
 #define SSD1306_ADDR  0x78    // Write Address
 const unsigned char font5x7[][5] = {
     {0x00, 0x00, 0x00, 0x00, 0x00}, // Space (32)

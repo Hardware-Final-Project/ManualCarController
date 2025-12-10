@@ -9,17 +9,12 @@ char mode = 0;
 
 char ch;
 
-char read_flag = 0, check_gear_input_flag = 0, reset_gear_flag = 0;
-
 int cnt = 0;
-
-char change_gear = 0;
 
 unsigned int duty1 = 0;
 unsigned int duty2 = 0;
 
 char gear_mode = 1, prev_gear_mode = 1;
-
 
 char direction = 0;
 
@@ -35,25 +30,7 @@ char delay100ms(int max_cnt) {
 }
 
 
-
-bool inputAvailable() {
-    char mbuffer[3];
-    strcpy(mbuffer, GetString());
-    if(strcmp("m1", mbuffer) == 0) {
-        mode = 1;
-        return true;
-    } else if(strcmp("m2", mbuffer) == 0) {
-        mode = 2;
-        return true;
-    } else if(strcmp("m3", mbuffer) == 0) {
-        mode = 3;
-        return true;
-    }
-    return false;
-}
-
 void thruttle() {
-    while(sscanf(GetString(), "%u %u", &duty1, &duty2) != 2);
     CCPR1L = (duty1 >> 2) & 0xff;
     CCP1CONbits.DC1B = duty1 & 0x03;
 
@@ -62,16 +39,90 @@ void thruttle() {
     
 }
 
+
 void gearShifting() {
-    while(sscanf(GetString(), "g%hhd", &gear_mode) != 1);
-    if (gear_mode != prev_gear_mode) {
-        change_gear = 1;
+    switch (prev_gear_mode) {
+        case 1:
+            switch (gear_mode) {
+                case 1:
+                    break;
+                case 2:
+                    LATD6 = 0;
+                    LATD7 = 1;
+                    T1CONbits.TMR1ON = 1;
+                    while (!delay100ms(7));
+                    T1CONbits.TMR1ON = 0;
+                    LATD6 = 0;
+                    LATD7 = 0;
+                    break;
+                case 3:
+                    break;
+                default:
+
+                    break;
+
+            }
+            break;
+
+        case 2:
+            switch (gear_mode) {
+                case 1:
+                    LATD6 = 1;
+                    LATD7 = 0;
+                    T1CONbits.TMR1ON = 1;
+                    while (!delay100ms(7));
+                    T1CONbits.TMR1ON = 0;
+                    LATD6 = 0;
+                    LATD7 = 0;
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    LATD6 = 0;
+                    LATD7 = 1;
+                    T1CONbits.TMR1ON = 1;
+                    while (!delay100ms(7));
+                    T1CONbits.TMR1ON = 0;
+                    LATD6 = 0;
+                    LATD7 = 0;
+                    break;
+                default:
+
+                    break;
+
+            }
+            break;
+
+        case 3:
+            switch (gear_mode) {
+                case 1:
+
+                    break;
+                case 2:
+                    LATD6 = 1;
+                    LATD7 = 0;
+                    T1CONbits.TMR1ON = 1;
+                    while (!delay100ms(7));
+                    T1CONbits.TMR1ON = 0;
+                    LATD6 = 0;
+                    LATD7 = 0;
+                    break;
+                case 3:
+
+                    break;
+                default:
+
+                    break;
+
+            }
+            break;
     }
-    
 }
 
+
 void resetGear() {
-    while (sscanf(GetString(), "rd%hhdrt%hhd", &direction, &reset_times) != 2);
+    while (sscanf(GetString(), "rd%hhrdt%hhd", &direction, &reset_times) != 2);
     if (direction == 0) {
         LATD6 = 1;
         LATD7 = 0;
@@ -93,23 +144,36 @@ void resetGear() {
 
 void executeCommand() {
     while (!getEnterFlag()) { }
-    if (!inputAvailable()) {
-        ClearBuffer();
-        return;
-    }
+    
+    if (getLenStr() != 1) return;
+    
+    mode = GetString()[0];
     ClearBuffer();
+
     switch(mode) {
-        case 1:
-            thruttle();
-            break;
-        case 2:
+        case 'A'...'C':
+            gear_mode = mode - 'A' + 1;
             gearShifting();
             break;
-        case 3:
+        // 0 ~ 500, -500 ~ 0
+        case 'a'...'u':
+            // a ~ k => 0~500
+            // l ~ v => -500~0
+            if(mode >= 'a' && mode <= 'k') {
+                duty1 = (mode - 'a') * 50;
+                duty2 = 0;
+            } else if(mode >= 'l' && mode <= 'v') {
+                duty1 = 0;
+                duty2 = (mode - 'l') * 50;
+            }
+            thruttle();
+            break;
+        case 'R':
             resetGear();
             break;
     }
-    mode = 0;
+    
+    mode = -1;
 }
 
 
@@ -131,71 +195,6 @@ void main(void) {
     while (1) {
         executeCommand();
         if(getEnterFlag() == 1) ClearBuffer();
-        if (change_gear) {
-            switch (prev_gear_mode) {
-                    case 1:
-                        switch (gear_mode) {
-                            case 1:
-                                break;
-                            case 2:
-                                LATD6 = 0;
-                                LATD7 = 1;
-                                T1CONbits.TMR1ON = 1;
-                                if (delay100ms(1)) {
-                                    T1CONbits.TMR1ON = 0;
-                                    LATD6 = 0;
-                                    LATD7 = 0;
-                                    change_gear = 0;
-                                }
-                                break;
-                            case 3:
-                                
-                                break;
-                            default:
-                                
-                                break;
-                        
-                        }
-                        break;
-                        
-                    case 2:
-                        switch (gear_mode) {
-                            case 1:
-                                
-                                break;
-                            case 2:
-                                
-                                break;
-                            case 3:
-                                
-                                break;
-                            default:
-                                
-                                break;
-                        
-                        }
-                        break;
-                        
-                    case 3:
-                        switch (gear_mode) {
-                            case 1:
-                                
-                                break;
-                            case 2:
-                                
-                                break;
-                            case 3:
-                                
-                                break;
-                            default:
-                                
-                                break;
-                        
-                        }
-                        break;
-                }
-                
-        }
     }
     
     return;

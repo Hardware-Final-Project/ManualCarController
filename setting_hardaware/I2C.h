@@ -1,6 +1,10 @@
 #ifndef _I2C_H
 #define _I2C_H
 
+
+#include <xc.h>
+
+
 #define CMD_MODE      0x00
 #define DATA_MODE     0x40
 
