@@ -5,6 +5,11 @@
 .gitignore~
 
 
+# MPLAB X Auto-generated files
+**/nbproject/Makefile-*
+**/nbproject/Package-*
+
+
 # MPLABX private project settings
 **/nbproject/private
 
