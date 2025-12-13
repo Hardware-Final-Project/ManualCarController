@@ -19,6 +19,7 @@ char gear_mode = 1, prev_gear_mode = 1;
 char direction = 0;
 
 char reset_times = 0;
+const int gear_shift_time_counter = 9;
 
 
 char delay100ms(int max_cnt) {
@@ -51,10 +52,11 @@ void gearShifting() {
                     LATD6 = 0;
                     LATD7 = 1;
                     T1CONbits.TMR1ON = 1;
-                    while (!delay100ms(7));
+                    while (!delay100ms(gear_shift_time_counter));
                     T1CONbits.TMR1ON = 0;
                     LATD6 = 0;
                     LATD7 = 0;
+                    prev_gear_mode = 2;
                     break;
                 case 3:
                     break;
@@ -71,10 +73,11 @@ void gearShifting() {
                     LATD6 = 1;
                     LATD7 = 0;
                     T1CONbits.TMR1ON = 1;
-                    while (!delay100ms(7));
+                    while (!delay100ms(gear_shift_time_counter));
                     T1CONbits.TMR1ON = 0;
                     LATD6 = 0;
                     LATD7 = 0;
+                    prev_gear_mode = 1;
                     break;
                 case 2:
 
@@ -83,10 +86,11 @@ void gearShifting() {
                     LATD6 = 0;
                     LATD7 = 1;
                     T1CONbits.TMR1ON = 1;
-                    while (!delay100ms(7));
+                    while (!delay100ms(gear_shift_time_counter));
                     T1CONbits.TMR1ON = 0;
                     LATD6 = 0;
                     LATD7 = 0;
+                    prev_gear_mode = 3;
                     break;
                 default:
 
@@ -104,10 +108,11 @@ void gearShifting() {
                     LATD6 = 1;
                     LATD7 = 0;
                     T1CONbits.TMR1ON = 1;
-                    while (!delay100ms(7));
+                    while (!delay100ms(gear_shift_time_counter));
                     T1CONbits.TMR1ON = 0;
                     LATD6 = 0;
                     LATD7 = 0;
+                    prev_gear_mode = 2;
                     break;
                 case 3:
 
@@ -123,7 +128,7 @@ void gearShifting() {
 
 
 void resetGear() {
-    while (sscanf(GetString(), "rd%hhrdt%hhd", &direction, &reset_times) != 2);
+    while (sscanf(GetString(), "rd%hhdrt%hhd", &direction, &reset_times) != 2);
     if (direction == 0) {
         LATD6 = 1;
         LATD7 = 0;
@@ -155,7 +160,7 @@ void executeCommand() {
         case 'A'...'C':
             gear_mode = mode - 'A' + 1;
             SSD1306_SetCursor(1, 0);
-            sprintf(oled_buffer, "Gear: %c", gear_mode);
+            sprintf(oled_buffer, "Gear: %hhd", gear_mode);
             SSD1306_PutString(oled_buffer);
             gearShifting();
             break;
@@ -163,14 +168,17 @@ void executeCommand() {
         case 'a'...'u':
             // a ~ k => 0~500
             // l ~ v => -500~0
-            if(mode >= 'a' && mode <= 'k') {
+            char speed_text ;
+            if(mode >= 'a' && mode < 'k') {
                 duty1 = (mode - 'a') * 50;
                 duty2 = 0;
-                sprintf(oled_buffer, "Speed: %c", duty1);
-            } else if(mode >= 'l' && mode <= 'v') {
+                speed_text = mode - 'a';
+                sprintf(oled_buffer, "Speed: %hhd", speed_text);
+            } else if(mode >= 'l' && mode < 'v') {
                 duty1 = 0;
-                duty2 = (mode - 'l') * 50;                
-                sprintf(oled_buffer, "Speed: -%c", duty2);
+                duty2 = (mode - 'l') * 50;     
+                speed_text = mode - 'l';
+                sprintf(oled_buffer, "Speed: -%hhd", speed_text);
             }
             SSD1306_SetCursor(2, 0);
             SSD1306_PutString(oled_buffer);
