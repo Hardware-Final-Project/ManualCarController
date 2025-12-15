@@ -212,7 +212,7 @@ void main(void) {
     
     
     SSD1306_PutString("Manual Car Controller");
-    while (1) {
+    while (ADC_Read() > 492 && ADC_Read() < 522) {
         executeCommand();
         if(getEnterFlag() == 1) ClearBuffer();
     }
