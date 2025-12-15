@@ -173,7 +173,7 @@ void executeCommand() {
                 duty1 = (mode - 'a') * 50;
                 duty2 = 0;
                 speed_text = mode - 'a';
-                sprintf(oled_buffer, "Speed: %hhd", speed_text);
+                sprintf(oled_buffer, "Speed: %hhd ", speed_text);
             } else if(mode >= 'l' && mode < 'v') {
                 duty1 = 0;
                 duty2 = (mode - 'l') * 50;     
@@ -210,9 +210,18 @@ void main(void) {
     CCPR2L = (duty2 >> 2) & 0xff;
     CCP2CONbits.DC2B = duty2 & 0x03;
     
-    
     SSD1306_PutString("Manual Car Controller");
-    while (ADC_Read() > 492 && ADC_Read() < 522) {
+    
+    while (!(ADC_Read(0) > 492 && ADC_Read(0) < 522));
+    
+    
+    SSD1306_Clear();
+    
+    SSD1306_SetCursor(0, 0);
+    
+    SSD1306_PutString("Car started");
+    
+    while (1) {
         executeCommand();
         if(getEnterFlag() == 1) ClearBuffer();
     }

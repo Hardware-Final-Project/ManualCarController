@@ -70,7 +70,6 @@ OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/setting_hardaware/adc.p1 ${OBJECTD
 SOURCEFILES=main.c setting_hardaware/adc.c setting_hardaware/interrupt_manager.c setting_hardaware/pin_manager.c setting_hardaware/setting.c setting_hardaware/uart.c setting_hardaware/ccp.c setting_hardaware/gear_shifting.c setting_hardaware/timer.c setting_hardaware/I2C.c setting_hardaware/SSD1306.c
 
 
-
 CFLAGS=
 ASFLAGS=
 LDLIBSOPTIONS=
@@ -98,7 +97,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -106,7 +105,7 @@ ${OBJECTDIR}/setting_hardaware/adc.p1: setting_hardaware/adc.c  nbproject/Makefi
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/adc.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/adc.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/adc.p1 setting_hardaware/adc.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/adc.p1 setting_hardaware/adc.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/adc.d ${OBJECTDIR}/setting_hardaware/adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -114,7 +113,7 @@ ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1: setting_hardaware/interrupt
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 setting_hardaware/interrupt_manager.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 setting_hardaware/interrupt_manager.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/interrupt_manager.d ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -122,7 +121,7 @@ ${OBJECTDIR}/setting_hardaware/pin_manager.p1: setting_hardaware/pin_manager.c  
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/pin_manager.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/pin_manager.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/pin_manager.p1 setting_hardaware/pin_manager.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/pin_manager.p1 setting_hardaware/pin_manager.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/pin_manager.d ${OBJECTDIR}/setting_hardaware/pin_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -130,7 +129,7 @@ ${OBJECTDIR}/setting_hardaware/setting.p1: setting_hardaware/setting.c  nbprojec
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/setting.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/setting.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/setting.p1 setting_hardaware/setting.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/setting.p1 setting_hardaware/setting.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/setting.d ${OBJECTDIR}/setting_hardaware/setting.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/setting.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -138,7 +137,7 @@ ${OBJECTDIR}/setting_hardaware/uart.p1: setting_hardaware/uart.c  nbproject/Make
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/uart.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/uart.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/uart.p1 setting_hardaware/uart.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/uart.p1 setting_hardaware/uart.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/uart.d ${OBJECTDIR}/setting_hardaware/uart.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -146,7 +145,7 @@ ${OBJECTDIR}/setting_hardaware/ccp.p1: setting_hardaware/ccp.c  nbproject/Makefi
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/ccp.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/ccp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/ccp.p1 setting_hardaware/ccp.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/ccp.p1 setting_hardaware/ccp.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/ccp.d ${OBJECTDIR}/setting_hardaware/ccp.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -154,7 +153,7 @@ ${OBJECTDIR}/setting_hardaware/gear_shifting.p1: setting_hardaware/gear_shifting
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/gear_shifting.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/gear_shifting.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/gear_shifting.p1 setting_hardaware/gear_shifting.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/gear_shifting.p1 setting_hardaware/gear_shifting.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/gear_shifting.d ${OBJECTDIR}/setting_hardaware/gear_shifting.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/gear_shifting.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -162,7 +161,7 @@ ${OBJECTDIR}/setting_hardaware/timer.p1: setting_hardaware/timer.c  nbproject/Ma
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/timer.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/timer.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/timer.p1 setting_hardaware/timer.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/timer.p1 setting_hardaware/timer.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/timer.d ${OBJECTDIR}/setting_hardaware/timer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/timer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -170,7 +169,7 @@ ${OBJECTDIR}/setting_hardaware/I2C.p1: setting_hardaware/I2C.c  nbproject/Makefi
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/I2C.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/I2C.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/I2C.p1 setting_hardaware/I2C.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/I2C.p1 setting_hardaware/I2C.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/I2C.d ${OBJECTDIR}/setting_hardaware/I2C.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -178,7 +177,7 @@ ${OBJECTDIR}/setting_hardaware/SSD1306.p1: setting_hardaware/SSD1306.c  nbprojec
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/SSD1306.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/SSD1306.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/SSD1306.p1 setting_hardaware/SSD1306.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/SSD1306.p1 setting_hardaware/SSD1306.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/SSD1306.d ${OBJECTDIR}/setting_hardaware/SSD1306.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/SSD1306.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -187,7 +186,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -195,7 +194,7 @@ ${OBJECTDIR}/setting_hardaware/adc.p1: setting_hardaware/adc.c  nbproject/Makefi
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/adc.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/adc.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/adc.p1 setting_hardaware/adc.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/adc.p1 setting_hardaware/adc.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/adc.d ${OBJECTDIR}/setting_hardaware/adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -203,7 +202,7 @@ ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1: setting_hardaware/interrupt
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 setting_hardaware/interrupt_manager.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1 setting_hardaware/interrupt_manager.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/interrupt_manager.d ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -211,7 +210,7 @@ ${OBJECTDIR}/setting_hardaware/pin_manager.p1: setting_hardaware/pin_manager.c  
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/pin_manager.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/pin_manager.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/pin_manager.p1 setting_hardaware/pin_manager.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/pin_manager.p1 setting_hardaware/pin_manager.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/pin_manager.d ${OBJECTDIR}/setting_hardaware/pin_manager.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -219,7 +218,7 @@ ${OBJECTDIR}/setting_hardaware/setting.p1: setting_hardaware/setting.c  nbprojec
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/setting.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/setting.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/setting.p1 setting_hardaware/setting.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/setting.p1 setting_hardaware/setting.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/setting.d ${OBJECTDIR}/setting_hardaware/setting.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/setting.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -227,7 +226,7 @@ ${OBJECTDIR}/setting_hardaware/uart.p1: setting_hardaware/uart.c  nbproject/Make
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/uart.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/uart.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/uart.p1 setting_hardaware/uart.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/uart.p1 setting_hardaware/uart.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/uart.d ${OBJECTDIR}/setting_hardaware/uart.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -235,7 +234,7 @@ ${OBJECTDIR}/setting_hardaware/ccp.p1: setting_hardaware/ccp.c  nbproject/Makefi
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/ccp.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/ccp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/ccp.p1 setting_hardaware/ccp.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/ccp.p1 setting_hardaware/ccp.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/ccp.d ${OBJECTDIR}/setting_hardaware/ccp.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -243,7 +242,7 @@ ${OBJECTDIR}/setting_hardaware/gear_shifting.p1: setting_hardaware/gear_shifting
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/gear_shifting.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/gear_shifting.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/gear_shifting.p1 setting_hardaware/gear_shifting.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/gear_shifting.p1 setting_hardaware/gear_shifting.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/gear_shifting.d ${OBJECTDIR}/setting_hardaware/gear_shifting.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/gear_shifting.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -251,7 +250,7 @@ ${OBJECTDIR}/setting_hardaware/timer.p1: setting_hardaware/timer.c  nbproject/Ma
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/timer.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/timer.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/timer.p1 setting_hardaware/timer.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/timer.p1 setting_hardaware/timer.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/timer.d ${OBJECTDIR}/setting_hardaware/timer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/timer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -259,7 +258,7 @@ ${OBJECTDIR}/setting_hardaware/I2C.p1: setting_hardaware/I2C.c  nbproject/Makefi
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/I2C.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/I2C.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/I2C.p1 setting_hardaware/I2C.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/I2C.p1 setting_hardaware/I2C.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/I2C.d ${OBJECTDIR}/setting_hardaware/I2C.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -267,7 +266,7 @@ ${OBJECTDIR}/setting_hardaware/SSD1306.p1: setting_hardaware/SSD1306.c  nbprojec
 	@${MKDIR} "${OBJECTDIR}/setting_hardaware" 
 	@${RM} ${OBJECTDIR}/setting_hardaware/SSD1306.p1.d 
 	@${RM} ${OBJECTDIR}/setting_hardaware/SSD1306.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/SSD1306.p1 setting_hardaware/SSD1306.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/setting_hardaware/SSD1306.p1 setting_hardaware/SSD1306.c 
 	@-${MV} ${OBJECTDIR}/setting_hardaware/SSD1306.d ${OBJECTDIR}/setting_hardaware/SSD1306.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/setting_hardaware/SSD1306.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -290,13 +289,13 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -mrom=default,-7d40-7fff -mram=default,-5ef-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffc-ffc,-ffd-fff  $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -mrom=default,-7d30-7fff -mram=default,-5ef-5ff,-f9c-f9c,-fd4-fd4,-fdb-fdf,-fe3-fe7,-feb-fef,-ffc-ffc,-ffd-fff  $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.hex 
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/ManualCarController.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	
 endif
 
