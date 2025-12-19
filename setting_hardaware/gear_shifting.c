@@ -8,6 +8,7 @@
 #define _XTAL_FREQ 4000000
 
 void Gear_Shifting_Initialize(){
+    // Initialize stepper motor control pins
     LATD6 = 0;
-    LATD7 = 0; 
+    LATD7 = 0;
 }

@@ -149,34 +149,41 @@ void resetGear() {
 }
 
 void executeCommand() {
+    // Wait until a complete command is received
     while (!getEnterFlag()) { }
-    
+
+    // Only process single-character commands
     if (getLenStr() != 1) return;
-    
+
+    // Store the received command
     mode = GetString()[0];
     ClearBuffer();
     char oled_buffer[10];
+
+    // Process different command types
     switch(mode) {
         case 'A'...'C':
+            // Gear shifting commands (A=1st gear, B=2nd gear, C=3rd gear)
             gear_mode = mode - 'A' + 1;
             SSD1306_SetCursor(1, 0);
             sprintf(oled_buffer, "Gear: %hhd", gear_mode);
             SSD1306_PutString(oled_buffer);
             gearShifting();
             break;
-        // 0 ~ 500, -500 ~ 0
+
+        // Throttle control commands (a-j: forward, l-u: reverse)
         case 'a'...'u':
-            // a ~ k => 0~500
-            // l ~ v => -500~0
-            char speed_text ;
+            char speed_text;
             if(mode >= 'a' && mode < 'k') {
+                // Forward speed (0-500)
                 duty1 = (mode - 'a') * 50;
                 duty2 = 0;
                 speed_text = mode - 'a';
                 sprintf(oled_buffer, "Speed: %hhd ", speed_text);
             } else if(mode >= 'l' && mode < 'v') {
+                // Reverse speed (0-500)
                 duty1 = 0;
-                duty2 = (mode - 'l') * 50;     
+                duty2 = (mode - 'l') * 50;
                 speed_text = mode - 'l';
                 sprintf(oled_buffer, "Speed: -%hhd", speed_text);
             }
@@ -184,7 +191,9 @@ void executeCommand() {
             SSD1306_PutString(oled_buffer);
             thruttle();
             break;
+
         case 'R':
+            // Gear reset mode
             SSD1306_SetCursor(3,0);
             SSD1306_PutString("Reset Gear mode");
             resetGear();
@@ -192,7 +201,7 @@ void executeCommand() {
             SSD1306_PutString("               ");
             break;
     }
-    
+
     mode = -1;
 }
 

@@ -74,22 +74,20 @@ void ClearBuffer(){
 
 void MyusartRead()
 {
-    /* TODObasic: try to use UART_Write to finish this function */
+    /* Read data from UART */
     char data = RCREG;
-    
-//    mystring[lenStr++] = data;
-    
+
+    // Check for end of command markers
     if (data == '\r' || data == '\n' || data == '@') {
         enterFlag = 1;
         mystring[lenStr] = '\0';
     } else {
+        // Store received character and echo back
         mystring[lenStr++] = data;
         UART_Write(data);
     }
-    
-    
-    
-    return ;
+
+    return;
 }
 
 char *GetString(){
